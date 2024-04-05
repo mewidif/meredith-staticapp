@@ -1,0 +1,32 @@
+
+<!-- PIRATE SHIPS PAGE -->
+
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Pirate Ships{% endblock %}
+
+{% block page_description %}A list of pirate ships of lore from fact and fiction.{% endblock %}
+
+{% block content %}
+<article class="container">
+  <h1>Ships of the Golden age of pirates</h1>
+  <!-- CARDS CARDS CARDS -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for ship in pirates.ships %}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body text-bg-success">
+        <h5 class="card-title">{{ ship.ship_name }}</h5>
+        <h6>{{ ship.captain }}</h6>
+        <p class="card-text">{{ ship.blurb }}</p>
+      </div>
+      <div class="card-footer">
+        <a href="{{ ship.source }}" class="card-link">More about the ship</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+<!-- END CARDS -->
+</article>
+{% endblock %}
