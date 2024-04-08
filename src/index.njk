@@ -10,5 +10,16 @@
       <p>Color is super important, but it your beard doesn't really have to be the color you name it to be. The most important factor is actually the legend. I mean, you want to be a legend, right? Would you name yourself periwinklebeard? No. That's for wimps, though it's a great paint color for living rooms.</p>
     </div>
   </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+    <h2>Me Bloggity Blarg:</h2>
+    <hr>
+    {% for blog in blog.blogs %}
+      <div class="col text-center">
+        <h3>{{ blog.headline }}</h3>
+        <h6><a href="blogs/{{ blog.slug }}.html" target="_blank">{{ blog.date }}</a></h6>
+      </div>
+    </hr>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
